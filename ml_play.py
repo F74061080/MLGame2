@@ -71,7 +71,7 @@ def ml_loop(side: str):
             feature.append(scene_info["ball"][0])
             feature.append(scene_info["ball"][1])
             x = get_dir(scene_info['ball_speed'][0], scene_info['ball_speed'][1])
-            feature.append(1)
+            feature.append(2)
             for i in range(4):
                 if i == x:
                     feature.append(1)
