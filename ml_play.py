@@ -26,7 +26,7 @@ def ml_loop(side: str):
     ball_served = False
     filename = path.join(path.dirname(__file__), 'save', 'forest_reg.pickle')
     with open(filename, 'rb') as file: # read binary
-    clf = pickle.load(file)
+        clf = pickle.load(file)
     ball_prev = [93, 395] # ball's initial point 
     def get_dir(vector_x, vector_y):
         if(vector_x >= 0 and vector_y >= 0):
