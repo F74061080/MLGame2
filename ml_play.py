@@ -6,6 +6,9 @@ import pickle
 from os import path
 import numpy as np
 from mlgame.communication import ml as comm
+filename = path.join(path.dirname(__file__), 'save', 'forest_reg.pickle')
+with open(filename, 'rb') as file: # read binary
+    clf = pickle.load(file)
 def ml_loop(side: str):
     """
     The main loop for the machine learning process
@@ -22,9 +25,7 @@ def ml_loop(side: str):
     # === Here is the execution order of the loop === #
     # 1. Put the initialization code here
     ball_served = False
-    filename = path.join(path.dirname(__file__), 'save', 'forest_reg.pickle')
-    with open(filename, 'rb') as file: # read binary
-        clf = pickle.load(file)
+    
     ball_prev = [93, 395] # ball's initial point 
     def get_dir(vector_x, vector_y):
         if(vector_x >= 0 and vector_y >= 0):
